@@ -25,9 +25,6 @@ public class TestController {
 	@Autowired
 	Environment Env;
 	
-	
-	
-
 	@GetMapping(value = "testAPI")
 	public ResponseEntity<?> testAPI(@RequestParam String operation, @RequestParam long a, @RequestParam long b)
 			throws Exception {
