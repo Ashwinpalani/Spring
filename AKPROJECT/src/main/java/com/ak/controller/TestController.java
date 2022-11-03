@@ -20,28 +20,30 @@ import com.ak.service.Operation;
 @RestController
 @Configuration
 public class TestController {
+	
 	@Autowired
-	Operation cal;
-	@Autowired
-	Environment Env;
+	Environment env;
 	
 	@GetMapping(value = "testAPI")
-	public ResponseEntity<?> testAPI(@RequestParam String operation, @RequestParam long a, @RequestParam long b)
+	public ResponseEntity<?> testAPI()
 			throws Exception {
+		String  property = env.getProperty("sub");
+//		FileWriter file = new FileWriter("E:\\Spring\\AKPROJECT\\src\\main\\resources\\test.txt");
+//		file.write(property);
 
-		String property = Env.getProperty(operation);
-		int num;
-		if(Env.getProperty(operation).equals(operation)) {
-		num =4;
-		}
-		else
-		{
-			num = Integer.parseInt(property);
-		}
-		
-		ArrayList<String> al = new ArrayList<>(
-				Arrays.asList(cal.add(a, b), cal.sub(a, b), cal.mul(a, b), cal.div(a, b),"invalid"));
-		return new ResponseEntity<>(al.get(num), HttpStatus.OK);
+//		//String property = Env.getProperty(operation);
+//		int num;
+//		if(Env.getProperty(operation).equals(operation)) {
+//		num =4;
+//		}
+//		else
+//		{
+//			num = Integer.parseInt(property);
+//		}
+//		
+//		ArrayList<String> al = new ArrayList<>(
+//				Arrays.asList(cal.add(a, b), cal.sub(a, b), cal.mul(a, b), cal.div(a, b),"invalid"));
+		return new ResponseEntity<>(property , HttpStatus.OK);
 	}
 
 }
