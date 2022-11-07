@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+<Properties>
+    <Property name="log-path">C:\Users\User\Desktop\AKproject\</Property>
+</Properties>
+<Appenders>
+
+    <!-- console appender -->
+    <Console name="console-log" target="SYSTEM_OUT">
+        <PatternLayout pattern="%d{dd/MM/yyyy HH:mm:ss:SSS} %5p - %m%n"/>
+    </Console>
+
+    <!-- file appender -->
+    <RollingFile name="trace" fileName="${log-path}/trace.log"
+                 filePattern="${log-path}/trace-%d{yyyy-MM-dd-HH}.log">
+        <!-- log pattern -->
+        <PatternLayout>
+            <pattern>%d{dd/MM/yyyy HH:mm:ss:SSS} %5p - %m%n</pattern>
+        </PatternLayout>
+
+        <!-- set file size policy -->
+        <Policies>
+            <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            <!-- <SizeBasedTriggeringPolicy size="1 KB" /> -->
+        </Policies>
+        <DefaultRolloverStrategy max="500"/>
+    </RollingFile>
+	
+	 <RollingFile name="AKPROJECT" fileName="${log-path}/trace.log"
+                 filePattern="${log-path}/trace-%d{yyyy-MM-dd-HH}.log">
+        <!-- log pattern -->
+        <PatternLayout>
+            <pattern>%d{dd/MM/yyyy HH:mm:ss:SSS} %5p - %m%n</pattern>
+        </PatternLayout>
+
+        <!-- set file size policy -->
+        <Policies>
+            <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            <!-- <SizeBasedTriggeringPolicy size="10 MB" /> -->
+        </Policies>
+        <DefaultRolloverStrategy max="500"/>
+    </RollingFile> 
+	<!-- file appender -->
+		<RollingFile name="AKPROJECT"
+			fileName="${log-path}/AKPROJECT.log"
+			filePattern="${log-path}/AKPROJECT-%d{yyyy-MM-dd-HH}.log">
+			<!-- log pattern -->
+			<PatternLayout>
+				<pattern>%d{dd/MM/yyyy HH:mm:ss:SSS} %5p - %m%n</pattern>
+			</PatternLayout>
+
+			<!-- set file size policy -->
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+				<!-- <SizeBasedTriggeringPolicy size="10 MB" /> -->
+			</Policies>
+			<DefaultRolloverStrategy max="2500" />
+		</RollingFile>
+
+</Appenders>
+
+<Loggers>
+	<Logger name="Dialog.Designer.TraceWriter" level="debug" additivity="false">
+	    <appender-ref ref="trace"/>>
+<!--	    <appender-ref ref="console-log"/>-->
+	</Logger>
+	<Logger name="AKPROJECT" level="debug" additivity="false">
+			<appender-ref ref="AKPROJECT" />
+			<appender-ref ref="console-log" />
+		</Logger>
+	<Logger name="Dialog.Designer.ReportWriter" level="debug" additivity="false">
+	    <appender-ref ref="report"/>
+<!--	    <appender-ref ref="console-log"/>-->
+	</Logger>
+	<Root level="debug" additivity="false">
+<!--        <AppenderRef ref="console-log"/>-->
+    </Root>
+</Loggers>
+</Configuration>

@@ -1,20 +1,15 @@
 package com.ak.service;
 
-import java.io.IOException;
-
-import org.springframework.http.ResponseEntity;
-
 public interface Operation {
-	String add(long a, long b);
+int add(int a, int b);
 
-	String sub(long a, long b);
+	int sub(int a, int b);
 
-	String mul(long a, long b);
+	int mul(int a, int b);
 
-	String div(long a, long b);
+	int div(int a, int b);
 
-	String prop(String operation, long a, long b); 
-
+	int prop(String operation, int a, int b); 
 
 
 }

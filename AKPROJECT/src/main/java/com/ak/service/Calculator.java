@@ -14,41 +14,58 @@ import org.springframework.stereotype.Service;
 public class Calculator implements Operation {
 	@Autowired
 	Environment Env;
-	long c;
+	int c;
 	int num;
 
-	public String add(long a, long b) {
+	public int add(int a, int b) {
 		c = a + b;
-		return "ADDITION = " + c;
+		return  c;
 	}
 
-	public String sub(long a, long b) {
+	public int sub(int a, int b) {
 		c = a - b;
-		return "SUBTRACTION = " + c;
+		return  c;
 	}
 
-	public String mul(long a, long b) {
+	public int mul(int a, int b) {
 		c = a * b;
-		return "MULTIPLICATION = " + c;
+		return  c;
 	}
 
-	public String div(long a, long b) {
+	public int div(int a, int b) {
 		c = a / b;
-		return "DIVITION = " + c;
+		return c;
 	}
 
-	public String prop(String operation, long a, long b) {
+	public int prop(String operation, int a, int b) {
 		
 		String property = Env.getProperty(operation);
-	
+	int cals = 0;
 		if (property == null) {
 			num = 4;
 		} else {
 			num = Integer.parseInt(property);
 		}
-		ArrayList<String> al = new ArrayList<>(
-				Arrays.asList(add(a, b), sub(a, b), mul(a, b), div(a, b), "invalid"));
-		return al.get(num);
+		switch (num) {
+		case 1:
+			cals = add(a, b);
+			break;
+		case 2:
+			cals = sub(a, b);
+			break;
+		case 3:
+			cals = mul(a, b);
+			break;
+		case 4:
+			cals = div(a, b);
+			break;
+
+		default:
+			System.out.println("Enter the valid operation:");
+		}
+//		ArrayList<int> al = new ArrayList<>(
+//				Arrays.asList(add(a, b), sub(a, b), mul(a, b), div(a, b), "invalid"));
+		return cals;
 	}
 
 }
