@@ -1,0 +1,108 @@
+<!-- <body>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+        <h1>List of Alert Messages</h1>
+        <p>Below you can find the messages.</p><hr>
+        <app-servers></app-servers>
+        <input type="text" [(ngModel)]= "name">
+        <p>{{name}}</p>
+        <hr>
+         <div app-servers></div> -->
+        <!-- <div class="app-servers"></div>
+        <button class="btn btn-success" [disabled]="isDisabled" >Click</button>
+     </div>
+  </div>
+</div>
+</body> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <br>
+    <br>
+    <div class="container well">
+        <div *ngIf="users;then userFound else noUsers">
+            Users Found;
+            </div>
+
+       <ng-template #userFound>
+        <div *ngFor="let username of users; index as i; first as isFirst; last as isLast;even as evenNum; odd as oddNum">
+            <div [ngSwitch]="username.age">
+            <div class="p1" *ngSwitchCase="26">Index:{{i}}&nbsp;OddorEven:{{oddNum}}&nbsp;First:{{isFirst}}&nbsp;{{username.names}}</div>
+            <div class="p2" *ngSwitchCase="21">Index:{{i}}&nbsp;OddorEven:{{evenNum}}&nbsp;First:{{isLast}}&nbsp;{{username.names}}</div>
+            <div class="p3" *ngSwitchDefault>{{username.names}}</div>
+        </div>
+        </div>
+       </ng-template>
+
+        <ng-template #noUsers>
+            No users found
+        </ng-template>
+
+        <ng-template [ngIf]="users">
+            <div *ngFor="let username of users">
+                <div [ngSwitch]="username.age">
+                <div class="p1" *ngSwitchCase="26">{{username.names}}</div>
+                <div class="p2" *ngSwitchCase="21">{{username.names}}</div>
+                <div class="p3" *ngSwitchDefault>{{username.names}}</div>
+            </div>
+            </div>
+        </ng-template>
+
+        <input ngModel #erase>
+        <p>{{erase.value}}</p>
+
+        <input [(ngModel)]="name" #names="ngModel">
+        <p>{{name}}</p>
+        <button type="submit" (click)="onSubmit(name)">sccccccccc</button>
+
+        <form  #f="ngForm" (ngSubmit)="submit()">
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="formdata.email" #email="ngModel" placeholder="Enter email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="formdata.password" #email="ngModel" placeholder="Enter password" id="pwd" required>
+            </div>
+            <div class="form-group">
+                <label class for="address">Address:</label>
+                <textarea class="form-control" name="address" [(ngModel)]="formdata.address" #email="ngModel"  placeholder="Enter the Address" id="address" rows="5"
+                    required></textarea>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"> Remember me
+                </label>
+            </div>
+            <div class="custom-control custom-radio">
+                <label class="custom-control-label" for="customRadio">Gender:</label>&nbsp;&nbsp;&nbsp;
+                <input type="radio" class="custom-control-input" id="customRadio1" name="example1">
+                <label>Male</label>
+                <input type="radio" class="custom-control-input" id="customRadio2" name="example1">
+                <label>Female</label>
+            </div>
+            <br>
+            <button type="submit" (click)="submit()" class="btn btn-primary" >Submit</button>&nbsp;&nbsp;&nbsp;
+            <button type="reset" class="btn btn-warning">Reset</button>
+        </form>
+    </div>
+</body>
+
+</html>
