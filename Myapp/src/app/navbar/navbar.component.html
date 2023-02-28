@@ -1,23 +1,33 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" href="javascript:void(0);" routerLink="/">JVLcode</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="javascript:void(0);" routerLink="/"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
-        <ng-container *ngIf="this.auth.isAuthenticated();then Authenticated;else nonAuthenticated">
+      <li class="nav-item"><img src="assets\Telapps.png"></li>
+      <ng-container *ngIf="this.auth.isAuthenticated();then Authenticated;else nonAuthenticated">
 
-        </ng-container>
-        <ng-template #nonAuthenticated>
-          <li class="nav-item"><a href="javascript:void(0);" routerLink="/register" class="nav-link" >Register</a></li>
-          <li><a class="nav-link" href="javascript:void(0);"  routerLink="/login">Login</a></li>
-        </ng-template>
+      </ng-container>
+      <ng-template #nonAuthenticated>
+        <!-- <li class="nav-item"><a href="javascript:void(0);" routerLink="/register" class="nav-link" >Register</a></li> -->
+        <li><a class="nav-link" href="javascript:void(0);" routerLink="/login"></a></li>
+      </ng-template>
 
-        <ng-template #Authenticated>
-          <li class="nav-item"><a href="javascript:void(0);" routerLink="/dashboard" class="nav-link" >Dashboard</a></li>
-          <li><a class="nav-link" href="javascript:void(0);"  >Logout</a></li>
-        </ng-template>
+      <ng-template #Authenticated>
+        <li class="nav-item"><a href="javascript:void(0);" routerLink="/dashboard" class="nav-link">Dashboard</a></li>
+        <li><a class="nav-link" href="javascript:void(0);">Logout</a></li>
+      </ng-template>
     </ul>
-    </div>
-  </nav>
- 
+  </div>
+  <div class="nav-item nav-link">
+    <ul class="navbar-nav navbar-right">
+      <li id="icon"><a href="#"> <i class="bi bi-person-fill fa-lg fa-2x text-white shadow"></i></a></li>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- <li><a href="#"> <i class="fas fa-question-circle fa-lg fa-2x text-danger"></i></a></li> -->
+     
+    </ul>
+
+  </div>
+</nav>

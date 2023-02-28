@@ -1,11 +1,21 @@
-.login-block{
+/* .login-block{
   float:left;
   width:100%;
-  padding : 50px 0;
+  padding : 50px;
+} */
+/* #D3D3D3  */
+body{ 
+  background-image: url("src\assets\background.jpg");
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-.container{background:#D3D3D3; border-radius: 10px; width: 40%; height: 40%;}
-.login-sec{padding: 50px 30px; position:relative;}
-.login-sec h2{margin-bottom:30px; font-weight:800; font-size:30px; color: #0069c0;}
-.login-sec h2:after{content:" "; width:100px; height:5px; background:#6ec6ff; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto}
+img{ margin-top: 10px;}
+.card{background:rgb(219, 246, 236);} 
+/* with in card */
+.login-sec{padding: 20px 30px; position:relative;}
+.login-sec h2{ margin-bottom:20px; font-weight:800; font-size:30px; color: #0069c0;}
+/* line */
+.login-sec h2:after{content:" "; width:100px; height:4px; background:#6ec6ff; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto}
 .btn-login{background: #0069c0; color:#fff; font-weight:600;}
+

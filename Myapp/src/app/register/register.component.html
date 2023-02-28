@@ -1,10 +1,10 @@
  <app-navbar></app-navbar>
 <section class="register-block">
-    <div class="container">
         <div class="row">
             <div class="col register-sec">
                 <h2 class="text-center">Register Now</h2>
                 <form class="register-form" action="" #f="ngForm" novalidate (ngSubmit)="f.form.valid&&onSubmit()">
+
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="text-uppercase">Name</label>
 
@@ -13,6 +13,7 @@
                             Name is required.
                         </span>
                     </div>
+
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="text-uppercase">Email</label>
 
@@ -21,6 +22,7 @@
                             Email is required.
                         </span>
                     </div>
+
                     <div class="form-group">
                         <label for="exampleInputPassword1" class="text-uppercase">Password</label>
                         <input class="form-control" type="password" name="password" id="" [(ngModel)]="formdata.password" #password="ngModel" required minlength="8">
@@ -31,18 +33,19 @@
                             Minimum length of password is 8 characters
                         </span>
                     </div>
+                    
                     <div class="form-group">
 
                         <span class="text-danger" *ngIf="this.errorMessage">
-                            <p>Custom error message</p>
+                            <p [innerText]="this.errorMessage"></p>
                         </span>
                         <div class="text-center">
-                            <div class="spinner-border text-primary " role="status">
+                            <div class="spinner-border text-primary " role="status" *ngIf="this.loading">
                                 <span class="sr-only">Loading...</span>
                             </div>
                         </div>
 
-                        <input type="submit" class="btn btn-login float-right" value="Register" (click)="submit=true">
+                        <input type="submit" class="btn btn-login float-right" value="Register" (click)="submit=true" [disabled]="this.loading">
                     </div>
                     <div class="clearfix"></div>
                     <div class="form-group">
@@ -51,5 +54,5 @@
                 </form>
             </div>
         </div>
-    </div>
+   
 </section>

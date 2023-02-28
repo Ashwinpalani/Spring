@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit{
   constructor(private auth:AuthService){}
 
 ngOnInit(): void {
+  //added for blocking the direct access of this page
   this.auth.canAccess();
 }
 }
