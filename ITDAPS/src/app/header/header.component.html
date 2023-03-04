@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="javascript:void(0);" routerLink="/"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><img src="assets\Telapps.png"></li>
+        </ul>
+    </div>
+    <div class="nav-item nav-link py-0">
+        <ul class="navbar-nav navbar-right">
+            <div class="container">
+                <ul class="nav nav-pills">
+                    <li class="nav-item dropdown">
+                        <!-- <a class="nav-link dropdown-toggle py-0" data-toggle="dropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false" id="logout">
+                            <i class="bi bi-person-circle fa-xs fa-1x text-danger"></i></a> -->
+
+                            <button type="button" class="btn btn-labeled btn-dark btn-sm dropdown-toggle" data-toggle="dropdown">
+                                <span class="btn-label"> <i class="bi bi-person-circle fa-xs fa-1x text-danger"></i></span></button>
+
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" routerLink="/login"><i class="bi bi-box-arrow-right fa-xs fa-1x text-dark"></i> Logout</a>
+                            <a class="dropdown-item" ><i class="bi bi-lock"></i> Change password</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </ul>
+    </div>
+</nav>
