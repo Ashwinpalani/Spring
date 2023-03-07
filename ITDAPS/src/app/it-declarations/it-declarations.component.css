@@ -1,5 +1,13 @@
-
-  .navbar {
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ .navbar {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     min-height: 50px !important;

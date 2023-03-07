@@ -10,21 +10,23 @@ import { Employee } from '../employee';
 })
 export class UpdateComponent implements OnInit {
 
-  employeeid?:any;
-  employee:Employee=new Employee();
+  employeeid!:number;
+  employee:Employee = new Employee();
 
   constructor(private router:Router,private route:ActivatedRoute,private auth:AuthService){
 
   }
   ngOnInit(): void {
-    this.employeeid = this.route.snapshot.params['employeeid'];
     
+    this.employeeid = this.route.snapshot.params['employeeid'];
     this.auth.getEmployeeById(this.employeeid).subscribe(data => {
       this.employee = data;
+      console.log(this.employee);
     }, error => console.log(error));
   }
 
-  onSubmit() {
+  onSubmit(){
+    
     this.auth.updateEmployee(this.employeeid, this.employee).subscribe(data => {
       this.gotoEmployeeList();
       console.log(data);

@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+
+ 
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +24,7 @@ import { ProofSubmissionComponent } from './proof-submission/proof-submission.co
 import { ManageDashboardComponent } from './manage-dashboard/manage-dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UpdateComponent } from './update/update.component';
+
 
 @NgModule({
   declarations: [
@@ -36,9 +45,15 @@ import { UpdateComponent } from './update/update.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
-  
+    HttpClientModule,
+  MatTabsModule,
+  BrowserAnimationsModule,
+  MatIconModule,
+  MatPaginatorModule,
+
+
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

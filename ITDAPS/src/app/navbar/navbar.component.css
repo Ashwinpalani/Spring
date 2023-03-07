@@ -6,7 +6,7 @@
 .navbar {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    min-height: 50px !important;
+    min-height: 50px;
  }
 
  /* .navbar button:hover{
@@ -107,18 +107,26 @@ li {
     float: left;
 }
 
+#settings{
+   float:inline-end;
+}
+
 li button {
     display: block;
     color: black;
     text-align: center;
     text-decoration: none;
     background-color: white;
-    margin-right: 10px;/* give the space between the buttons*/
+    border: none;
+    /* give the space between the buttons */
+    /* margin-right: 15px;  */
+    
 }
+
 
 #topheader .navbar-nav li>button {
     text-transform: capitalize;
-    color: #333;
+    color: black;
     -webkit-transition: background-color .2s, color .2s;
     transition: background-color .2s, color .2s;
 }
@@ -132,4 +140,34 @@ li button {
 #topheader .navbar-nav li.active>button {
      background-color: white; 
      color: black;
+}
+
+
+/* search box styles */
+.search-box {
+  float: right;
+}
+
+.search-box button {
+   height: 30px;
+  width: 30px;
+  margin-left: 0px;
+
+margin-right: 40px;
+  border:1px solid black;
+ 
+  /* margin-right: 16px; */
+}
+  
+.search-box input[type=text] {
+  height: 30px;
+  font-size: 17px;
+  width: 250px;
+  /* margin-top: 14px; */
+  border-bottom-left-radius: 5px; 
+  border-top-left-radius: 5px;
+
+  /* margin-right: 40px; */
+  border: 1px solid black;
+  
 }

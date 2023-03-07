@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Employee } from './employee';
 
 @Injectable({
@@ -10,11 +10,19 @@ import { Employee } from './employee';
 export class AuthService {
   
 
-  private baseUrl1="http://localhost:8080/tax/get";
-  private baseUrl2="http://localhost:8080/tax/save";
-  private baseUrl3="http://localhost:8080/tax/delete";
-  private baseUrl4="http://localhost:8080/tax/update";
-  private baseUrl5="http://localhost:8080/tax/getbyid";
+  // private baseUrl1="http://localhost:8080/tax/get";
+  // private baseUrl2="http://localhost:8080/tax/save";
+  // private baseUrl3="http://localhost:8080/tax/delete";
+  // private baseUrl4="http://localhost:8080/tax/update";
+  // private baseUrl5="http://localhost:8080/tax/getbyid";
+
+
+  private baseUrl1="http://172.16.10.21:8080/emp/get";
+  private baseUrl2="http://172.16.10.21:8080/emp/create";
+  private baseUrl3="http://172.16.10.21:8080/emp/delete";
+  private baseUrl4="http://172.16.10.21:8080/emp/update";
+  private baseUrl5="http://172.16.10.21:8080/emp/getbyid";
+  
  
 
   constructor(private router: Router, private http: HttpClient) { }
@@ -55,7 +63,7 @@ export class AuthService {
    }
 
    deleteDetails(employeeid: number) {
-    debugger
+    
     return this.http.delete<Employee>(`${this.baseUrl3}/${employeeid}`);
   }
 
@@ -64,8 +72,8 @@ export class AuthService {
   }
 
   getEmployeeById(employeeid: number): Observable<Employee>{
+    debugger
     return this.http.get<Employee>(`${this.baseUrl5}/${employeeid}`);
   }
-
 
 }

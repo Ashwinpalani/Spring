@@ -8,6 +8,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { ManageDashboardComponent } from './manage-dashboard/manage-dashboard.component';
 import { ProofSubmissionComponent } from './proof-submission/proof-submission.component';
 import { ProofValidationComponent } from './proof-validation/proof-validation.component';
+import { UpdateComponent } from './update/update.component';
 
 const routes: Routes = [
 
@@ -19,7 +20,9 @@ const routes: Routes = [
   {path:'validation',component : ProofValidationComponent},
   {path:'submission',component : ProofSubmissionComponent},
   {path:'manage',component : ManageDashboardComponent},
-  {path:'declaration',component : ITDeclarationsComponent}
+  {path:'declaration',component : ITDeclarationsComponent},
+  {path:'update/:employeeid',component : UpdateComponent},
+
   
 ];
 

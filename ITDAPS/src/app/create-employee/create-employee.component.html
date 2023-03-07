@@ -6,129 +6,66 @@
 
     <div class="sidebar shadow">
         <!-- <a class="active" href="#home"><i class="fa fa-fw fa-home"></i>Home</a> -->
-        <a routerLink="/home"><i class="fa fa-fw fa-home"></i>Home</a><hr class="line">
+        <a routerLink="/home"><i class="fa fa-fw fa-home"></i>Home</a>
         <a routerLink="/create"><i class="fa fa-fw fa-user"></i>Create</a>
         <a routerLink="/manage"><i class="fa fa-fw fa-wrench"></i>Manage</a>
 
 
     </div>
 </div>
-<!-- <section class="register-block">
-    <div class="clearfix col-md-6 offset-md-3">
-        <div class="row">
-            <div class="col register-sec">
-                <div class="card mx-auto" style="width: 70%;">
-                    <div class="card-body">
-                        <h2 class="text-center">Register Now</h2>
-                        <form class="register-form" action="" #f="ngForm" novalidate
-                            (ngSubmit)="f.form.valid&&onSubmit()">
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1" class="text-uppercase">Employee-id</label>
-
-                                <input type="text" class="form-control" name="name" id="" [(ngModel)]="formdata.name"
-                                    #name="ngModel" required>
-                                <span class="text-danger" *ngIf="this.submit&&name.errors?.['required']">
-                                    Name is required.
-                                </span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleInputEmail1" class="text-uppercase">Email</label>
-
-                                <input type="text" class="form-control" name="email" id="" [(ngModel)]="formdata.email"
-                                    #email="ngModel" required>
-                                <span class="text-danger" *ngIf="this.submit&&email.errors?.['required']">
-                                    Email is required.
-                                </span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleInputPassword1" class="text-uppercase">Password</label>
-                                <input class="form-control" type="password" name="password" id=""
-                                    [(ngModel)]="formdata.password" #password="ngModel" required minlength="8">
-                                <span class="text-danger" *ngIf="this.submit&&password.errors?.['required']">
-                                    Password is required.
-                                </span>
-                                <span class="text-danger" *ngIf="this.submit&&password.errors?.['minlength']">
-                                    Minimum length of password is 8 characters
-                                </span>
-                            </div>
-
-                            <div class="form-group">
-
-                                <span class="text-danger" *ngIf="this.errorMessage">
-                                    <p [innerText]="this.errorMessage"></p>
-                                </span>
-                                <div class="text-center">
-                                    <div class="spinner-border text-primary " role="status" *ngIf="this.loading">
-                                        <span class="sr-only">Loading...</span>
-                                    </div>
-                                </div>
-
-                                <input type="submit" class="btn btn-login float-right" value="Register"
-                                    (click)="submit=true" [disabled]="this.loading">
-                            </div>
-                            <div class="clearfix"></div>
-                            <!-- <div class="form-group">
-                                Already have account ? Please <a href="javascript:void(0);"
-                                    routerLink="/login">Login</a>
-                            </div> 
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section> -->
 <div class="content" style="text-align: justify;">
-    <!-- <h1 class="well" style="text-align: left;">Registration Form</h1> -->
-<div class="container">
-    <br>
-    <div class="col-lg-12 well">
-        <div class="row">
-            <form >
-                <div class="col-sm-12">
-                    <div class="row">
-                        <div class="col-sm-6 form-group">
-                            <label>Name*</label>
-                            <input type="text" placeholder="Enter First Name Here.." class="form-control" [(ngModel)]="employee.name" id="name" name="name" #name="ngModel">
+    <!--<h1 class="well" style="text-align: left;">Registration Form</h1> -->
+    <div class="container">
+        <br>
+        <div class="col-lg-12 well">
+            <div class="row">
+                <form>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label>Name*</label>
+                                <input type="text" placeholder="Enter First Name Here.." class="form-control"
+                                    [(ngModel)]="employee.name" id="name" name="name" #name="ngModel">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Employee-id*</label>
+                                <input type="text" placeholder="Enter Employee-id Here.." class="form-control"
+                                    [(ngModel)]="employee.employeeid" id="employeeid" name="employeeid"
+                                    #employeeid="ngModel">
+                            </div>
                         </div>
-                        <div class="col-sm-6 form-group">
-                            <label>Employee-id*</label>
-                            <input type="text" placeholder="Enter Employee-id Here.." class="form-control" [(ngModel)]="employee.employeeid" id="employeeid" name="employeeid" #employeeid="ngModel">
-                        </div>
-                    </div>
-                    <div class="row">
+                        <!-- <div class="row">
                         <div class="col-sm-12 form-group">
                             <label>Designation*</label>
                             <input type="text" placeholder="Enter Designation Here.." class="form-control" [(ngModel)]="employee.designation" id="designation" name="designation" #designation="ngModel">
                         </div>
+                        </div> -->
+                        <div class="form-group">
+                            <label>Phone Number*</label>
+                            <input type="text" placeholder="Enter Phone Number Here.." class="form-control"
+                                [(ngModel)]="employee.phonenumber" id="phonenumber" name="phonenumber"
+                                #phonenumber="ngModel">
                         </div>
-                    <div class="form-group">
-                        <label>Phone Number*</label>
-                        <input type="text" placeholder="Enter Phone Number Here.." class="form-control" [(ngModel)]="employee.phonenumber" id="phonenumber" name="phonenumber" #phonenumber="ngModel">
-                    </div>
-                    <div class="form-group">
-                        <label>Email Address*</label>
-                        <input type="text" placeholder="Enter Email Address Here.." class="form-control" [(ngModel)]="employee.email" id="email" name="email" #email="ngModel">
-                    </div>
-                    <!-- <div class="form-group">
-                        <label>Address</label>
-                        <textarea placeholder="Enter Address Here.." rows="3" class="form-control"></textarea>
-                    </div> -->
-                    <div class="row">
-                        <div class="col-sm-12 form-group">
-                            <label>PAN-number*</label>
-                            <input type="text" placeholder="Enter PAN-number Here.." class="form-control"[(ngModel)]="employee.pan" id="pan" name="pan" #pan="ngModel">
+                        <div class="form-group">
+                            <label>Email Address*</label>
+                            <input type="text" placeholder="Enter Email Address Here.." class="form-control"
+                                [(ngModel)]="employee.email" id="email" name="email" #email="ngModel">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <label>PAN-number*</label>
+                                <input type="text" placeholder="Enter PAN-number Here.." class="form-control"
+                                    [(ngModel)]="employee.pan" id="pan" name="pan" #pan="ngModel">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-md btn-info" (click)="saveEmployee()"> Submit</button>
                         </div>
                     </div>
-                    <div class="form-group">
-                    <button type="button" class="btn btn-md btn-info" (click)="saveEmployee()"> Submit</button></div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 </div>

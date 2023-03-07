@@ -4,56 +4,46 @@
     <div class="sidebar shadow">
         <!-- <a class="active" href="#home"><i class="fa fa-fw fa-home"></i>Home</a> -->
         <a routerLink="/home"><i class="fa fa-fw fa-home"></i>Home</a>
-        <hr class="line">
+
         <a routerLink="/create"><i class="fa fa-fw fa-user"></i>Create</a>
         <a routerLink="/manage"><i class="fa fa-fw fa-wrench"></i>Manage</a>
     </div>
 </div>
 <div class="content" style="text-align: justify;">
-   <br>
-    <table class="table table-striped table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>Employee-id</th>
-                <th>Name</th>
-                <th>Email-address</th>
-                <th>Designation</th>
-                <th class="text-center">Edit-Options</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let employee of employees">
-                <td>{{ employee.employeeid }}</td>
-                <td>{{ employee.name }}</td>
-                <td>{{ employee.email }}</td>
-                <td>{{ employee.designation }}</td>
-                <td class="text-center">
-                    <button (click)="updateEmployee(employee.employeeid)"  class="btn btn-primary" >update</button>&nbsp;
-                    <button (click)="deleteEmployee(employee.employeeid)" class="btn btn-danger" >delete</button>
-                </td>
-            </tr>
-            <!-- <tr>
-                <td>21214</td>
-                <td>AshwinKumar</td>
-                <td>ashwin@gmail.com</td>
-                <td>Software Engineer Trainee</td>
-                <td class="text-center">
-                    <button class="btn btn-primary" routerLink="update">update</button>&nbsp;
-                    <button class="btn btn-danger">delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>21344</td>
-                <td>ArunPandi</td>
-                <td>arun@gmail.com</td>
-                <td>Software Engineer Trainee</td>
-                <td class="text-center">
-                    <button class="btn btn-primary" routerLink="update">update</button>&nbsp;
-                    <button class="btn btn-danger">delete</button>
-                </td>
-            </tr> -->
-        </tbody>
-    </table>
+    <div class="container text-center mt-4">
+        <div class="row">
+            <input class="form-control col-md-6" type="text" [(ngModel)]="searchText" placeholder="Search by name" />
+            <button class="btn btn-primary col-md-1" (click)="Search()">Search</button>
+        </div><br>
+        <table id="dtBasicExample" class="table table-striped table-bordered table-sm row-border hover" cellspacing="0" width="100%">
+        
+            <thead>
+                <tr>
+                    <th>Employee-id</th>
+                    <th>Name</th>
+                    <th>Email-address</th>
+                    <th>PAN-number</th>
+                    <th class="text-center">Edit-Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees">
+                    <td>{{ employee.employeeid }}</td>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.pan }}</td>
+                    <td class="text-center">
+                        <a (click)="updateEmployee(employee.employeeid)" class="btn btn-primary"><span
+                                id="boot-icon" class="bi bi-pencil-fill"></span></a>&nbsp;
+                        <a (click)="deleteEmployee(employee.employeeid)" class="btn btn-danger"><span
+                                class="bi bi-trash-fill"></span></a>
+                    </td>
+                </tr>
 
-   
-</div>
+            </tbody>
+        </table>
+
+      
+
+
+    </div>

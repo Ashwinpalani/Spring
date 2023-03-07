@@ -7,9 +7,6 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
-task="";
-  Onclick(){
-   this.task="nav-item nav-link active";
-  }
+
 
 }
