@@ -1,0 +1,167 @@
+/* .register-block{
+    float:left;
+    width:100%;
+    padding : 50px 0;
+  }
+  
+  .card{background:rgb(192, 234, 252);}
+  .container{background:#D3D3D3; border-radius: 10px; width: 40%; height: 40%;}
+  .register-sec{padding: 20px 30px; position:relative;}
+  .register-sec h2{margin-bottom:20px; font-weight:800; font-size:30px; color: #0069c0;}
+  .register-sec h2:after{content:" "; width:100px; height:5px; background:#6ec6ff; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto}
+  .btn-login{background: #0069c0; color:#fff; font-weight:600;} */
+
+
+  .navbar {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: 50px !important;
+ }
+
+ .navbar a:hover{
+  background-color: white;
+  color: black;
+}
+
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: absolute;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: rgb(177, 216, 250);
+    color: black;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+   
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+  #icon{
+    color: black;
+    text-align: right;
+
+  }
+
+
+  /*Registartion form*/
+  /* Space out content a bit */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  /* Everything but the jumbotron gets side spacing for mobile first views */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  /* Custom page header */
+  .header {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  /* Make the masthead heading the same height as the navigation */
+  .header h3 {
+    padding-bottom: 19px;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+  }
+
+  /* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+  }
+  
+  /* Customize container */
+  @media (min-width: 768px) {
+    .container {
+      max-width: 730px;
+    }
+  }
+  .container-narrow > hr {
+    margin: 30px 0;
+  }
+  
+  /* Main marketing message and sign up button */
+  .jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .jumbotron .btn {
+    padding: 14px 24px;
+    font-size: 21px;
+  }
+
+  .marketing {
+    margin: 40px 0;
+  }
+  .marketing p + h4 {
+    margin-top: 28px;
+  }
+  
+  /* Responsive: Portrait tablets and up */
+  @media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    /* Space out the masthead */
+    .header {
+      margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+      border-bottom: 0;
+    }
+}

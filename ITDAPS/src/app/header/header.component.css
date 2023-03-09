@@ -1,0 +1,19 @@
+img{
+    height: 40px;
+}
+
+.navbar {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: 50px !important;
+ }
+
+ a:hover, a:active, a:focus {
+    color:black;
+  }
+
+  a[role=button] :active{
+   color: black;
+  }
+
+  i{ -webkit-text-stroke: 1px; }

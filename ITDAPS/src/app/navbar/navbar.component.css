@@ -1,0 +1,173 @@
+.fixed-top-2 {
+    margin-top: 50px;
+}
+
+
+.navbar {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: 50px;
+ }
+
+ /* .navbar button:hover{
+  background-color: white;
+  color: black;
+}
+
+.navbar button.active {
+    background-color: white;
+    color: black;
+  } */
+
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: absolute;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: rgb(177, 216, 250);
+    color: black;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+   
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+  #icon{
+    color: black;
+    text-align: right;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* background-color: black ;   */
+}
+
+li {
+    float: left;
+}
+
+#settings{
+   float:inline-end;
+}
+
+li button {
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    background-color: white;
+    border: none;
+    /* give the space between the buttons */
+    /* margin-right: 15px;  */
+    
+}
+
+
+#topheader .navbar-nav li>button {
+    text-transform: capitalize;
+    color: black;
+    -webkit-transition: background-color .2s, color .2s;
+    transition: background-color .2s, color .2s;
+}
+
+#topheader .navbar-nav li>button:hover,
+#topheader .navbar-nav li>button:focus {
+    background-color: white;
+    color: black;
+}
+
+#topheader .navbar-nav li.active>button {
+     background-color: white; 
+     color: black;
+}
+
+
+/* search box styles */
+.search-box {
+  float: right;
+}
+
+.search-box button {
+   height: 30px;
+  width: 30px;
+  margin-left: 0px;
+
+margin-right: 40px;
+  border:1px solid black;
+ 
+  /* margin-right: 16px; */
+}
+  
+.search-box input[type=text] {
+  height: 30px;
+  font-size: 17px;
+  width: 250px;
+  /* margin-top: 14px; */
+  border-bottom-left-radius: 5px; 
+  border-top-left-radius: 5px;
+
+  /* margin-right: 40px; */
+  border: 1px solid black;
+  
+}

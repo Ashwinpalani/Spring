@@ -1,0 +1,22 @@
+{ 
+    min-height: 100vh;
+    background-image: url("src\assets\background.jpg");
+    /* background-color: black; */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    /* position: relative; */
+    
+  }
+  img{ margin-top: 8px; height: 70px;}
+  .card{background:rgb(192, 234, 252);} 
+  /* with in card */
+  .login-sec{padding: 20px 20px; position:relative;}
+  .login-sec h2{ margin-bottom:20px; font-weight:800; font-size:30px; color: #0069c0;}
+  /* line */
+  .login-sec h2:after{content:" "; width:100px; height:4px; background:#6ec6ff; display:block; margin-top:10px; border-radius:3px; margin-left:auto;margin-right:auto}
+  .btn-login{background: #0069c0; color:#fff; font-weight:600;}
+  
